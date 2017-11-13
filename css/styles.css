@@ -1,0 +1,46 @@
+#slide-1,#slide-2,#slide-3,#slide-4,#slide-5{
+  width: 100%;
+  height: 100vh;
+}
+
+#slide-1{
+  background-color: #33ccff;
+  text-align: center;
+}
+
+#slide-2{
+  background-color: #F27A5F;
+}
+
+#slide-3{
+  background-color: #B3CE41;
+}
+
+
+#slide-4{
+  background-color: #AC66CC;
+}
+
+#slide-5{
+  background-color: #E8B03F;
+}
+
+.title{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mouse{
+  margin-top: 120px;
+  width: 30%;
+}
+
+h1{
+  margin: 0;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  text-align: center;
+  font-size: 26px;
+}
