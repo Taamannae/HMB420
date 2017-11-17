@@ -1,6 +1,11 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
 #slide-1,#slide-2,#slide-3,#slide-4,#slide-5{
   width: 100%;
   height: 100vh;
+  padding: 40px;
 }
 
 #slide-1{
@@ -10,6 +15,7 @@
 
 #slide-2{
   background-color: #F27A5F;
+
 }
 
 #slide-3{
@@ -43,4 +49,99 @@ h1{
   line-height: 40px;
   text-align: center;
   font-size: 26px;
+}
+
+h2{
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+h4{
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  vertical-align: center;
+  margin-top: 35vh;
+}
+
+.child-mouse{
+  width: 120px;
+
+}
+
+/* DivTable.com */
+.divTable{
+  font-size: 30px;
+  text-align: center;
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #FFF;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 4px solid #FFF;
+	display: table-cell;
+	padding: 3px 10px;
+}
+
+.cell{
+  height: 150px;
+}
+.divTableHeading {
+	background-color: #FFF;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #FFF;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+
+.alco{
+  width: 100px;
+  margin: 0;
+}
+
+.kid-mice{
+  display: none;
+}
+
+.active{
+  display: block !important;
+}
+
+.done{
+  display: none;
+}
+
+.full{
+  transition: all 0.5s ease;
+}
+
+.full:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+
+}
+
+#slide-3 h1{
+  font-size: 40px;
+  text-align: left;
+
+}
+
+#slide-3 h5{
+  margin: 30px;
+  margin-left: 0;
+  font-size: 20px;
 }
