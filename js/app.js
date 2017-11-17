@@ -37,6 +37,8 @@ $(document).ready(function(){
        document.getElementById("mice2").style.display = "none";
        document.getElementById("mice3").style.display = "none";
 
+       document.getElementById("after-drink").style.display = "block";
+
     }else if(counter > 3){
       console.log(counter);
 

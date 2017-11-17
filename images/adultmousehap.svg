@@ -149,4 +149,8 @@
 <g>
 	<circle fill="#84702C" cx="73.892" cy="81.854" r="2.325"/>
 </g>
+<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M148.375,58.604
+	c-0.195-1.656,2.29-3.887,3.875-4.125"/>
+<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M156.25,86.479
+	c0.132,0.64,1.084,1.147,1.562,1.562c0.539,0.469,1.162,0.848,1.815,1.172c1.066,0.529,2.261,1.246,3.435,1.266"/>
 </svg>

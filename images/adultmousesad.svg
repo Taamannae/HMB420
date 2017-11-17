@@ -149,4 +149,10 @@
 <g>
 	<circle fill="#84702C" cx="73.892" cy="81.854" r="2.325"/>
 </g>
+<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M155.562,88.167
+	c1.434-0.426,2.994-0.521,4.361,0.205c1.098,0.583,1.969,1.521,2.889,2.295"/>
+<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M150.745,60.401
+	c1.65-1.025,3.029-1.375,5-1.375"/>
+<path fill="#3AC0C9" d="M152.531,66.151c0,0.526-0.427,0.953-0.953,0.953s-0.953-0.427-0.953-0.953s0.953-2.578,0.953-2.578
+	S152.531,65.625,152.531,66.151z"/>
 </svg>
