@@ -2,7 +2,7 @@
     font-family: "Montserrat", sans-serif;
 }
 
-#slide-1,#slide-2,#slide-3,#slide-4,#slide-5, #slide-6,#slide-7, #slide-8, #slide-9,#slide-10 {
+#slide-1,#slide-2,#slide-3,#slide-4,#slide-5, #slide-6,#slide-7, #slide-8, #slide-9,#slide-10, #slide-11 {
   width: 100%;
   height: 100vh;
   padding: 40px;
@@ -36,7 +36,8 @@
 
 #slide-6{
   background-color: #E8B03F;
-  padding: 0;
+  padding: 40px;
+
 }
 
 #slide-7{
@@ -52,6 +53,10 @@
   padding: 0;
 }
 #slide-10{
+  background-color: #AC66CC;
+  padding: 0;
+}
+#slide-11{
   background-color: #AC66CC;
   padding: 0;
 }
@@ -248,7 +253,7 @@ h4{
   width: 100%;
   background-color: #332F30;
   border: 10px solid #955F25;
-  height: 500px;
+  height: 450px;
 }
 
 .hap{
@@ -292,4 +297,115 @@ h4{
   font-family: "Montserrat", sans-serif !important;
   color: #000;
   font-size: 16px !important;
+}
+
+#slide-6 h5{
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.canada{
+  margin-top: 20px;
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+  width: 50%;
+  float: right;
+}
+
+.ontario{
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  width: 50%;
+  float: left;
+  border-right: 2px solid #686868;
+}
+
+.tabs{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #D67F00;
+
+}
+
+.wrstats{
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
+
+}
+
+.canstats{
+  background-color: #D67F00;
+  padding: 20px;
+  height: 500px;
+  text-align: left;
+}
+
+
+.graph-img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+.tabs h2{
+  display: inline-block !important;
+  background-color: #D67F00;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  width: 49.5%;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.tabs h2:hover{
+  background-color: #995402;
+}
+
+.city{
+  word-wrap: break-word;
+  background-color: #D67F00;
+  width: 100%;
+  font-size: 20px;
+
+}
+
+.city{
+  display: none;
+}
+.down{
+  margin-top: 40px;
+
+}
+
+.down li{
+  font-size: 18px !important;
+}
+
+#ese, #linux{
+  height: 450px;
+}
+
+#ese{
+  text-align: center;
+}
+#ese-pure{
+  background-color: #D67F00;
+}
+
+.ese-info{
+  margin: 0;
+  display: inline-block;
+}
+
+.active3{
+  display: block !important;
+}
+
+.active2{
+  background-color: #D67F00;
 }

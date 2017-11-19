@@ -28,6 +28,11 @@
       <h4> Wanna see what happens when you start drinking now?</h4>
 
     </section>
+
+    <section id="slide-11">
+
+    </section>
+
     <section id="slide-3">
 
       <h1>Let the drinking games begin!</h1>
@@ -368,6 +373,52 @@
 
   </section>
   <section id="slide-6">
+    <h5> Numbers & Statistics</h5>
+    <div class="ontario">
+      <h2>Canada</h2>
+      <div class="tabs">
+        <div class="tab-button">
+          <h2 onclick="openCity('ese', 'ese-pure')" class="tabs active2" id="ese-pure">1</h2>
+          <h2 onclick="openCity('linux', 'pure-power')" class="tabs" id="pure-power">2</h2>
+      </div>
+      <div class="city active2" id="ese">
+
+          <img src="./images/graph.svg" class=" graph-img">
+          <p style="font-size:12px;">Estimated precentage of Canadians in grade 7 to 12 who a) consumed alcohol
+or b) undertook binge drinking (5 or more drink on one occasion) in the
+year prior to the Youth Smoking Survery 2012-2013</p>
+      </div>
+      <div class="city" id="linux">
+        <div class="wrstats">
+          <ul>
+            <li>Alcohol is the substance with the highest prevalence of use by Canadian students in grades 7 to 12. </li>
+            <li>On average, students tried their first alcoholic beverage at 13.5 years of age </li>
+            <li>Just under one quarter of students (24%, approximately 500,000 students) reported drinking excessively (i.e., five or more drinks on one occasion) in the past 12 months.</li>
+            <li>When students were asked how difficult they thought it would be to get alcohol if they wanted some, 67% (approximately 1.4 million students) responded that they thought it would be "fairly easy" or "very easy".</li>
+            <li>Motor vehicle crashes, liver cirrhosis, suicides, oesophageal cancer, and arrhythmias were the leading causes of alcohol-related deaths. — MADD Canada </li>
+            <li>By grades 10 to 12, almost 60% of teenagers reported having had a drink in the previous year while about 46% reported having undertaken binge drinking in 2012-2013. </li>
+            <li>Previous year was linked to emotional and behaviour problems, particularly in those drinking more, particularly in those who undertook binge drinking the most </li>
+            <li>Alcohol is the most commonly abused Substance in Canada</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    </div>
+    <div class="canada">
+      <h2>Ontario</h2>
+      <div class="canstats">
+        <ul>
+          <li>Alcohol is the substance with the highest prevalence of use by Canadian students in grades 7 to 12. </li>
+          <li>On average, students tried their first alcoholic beverage at 13.5 years of age </li>
+          <li>Just under one quarter of students (24%, approximately 500,000 students) reported drinking excessively (i.e., five or more drinks on one occasion) in the past 12 months.</li>
+          <li>When students were asked how difficult they thought it would be to get alcohol if they wanted some, 67% (approximately 1.4 million students) responded that they thought it would be "fairly easy" or "very easy".</li>
+          <li>Motor vehicle crashes, liver cirrhosis, suicides, oesophageal cancer, and arrhythmias were the leading causes of alcohol-related deaths. — MADD Canada </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="slide-7">
@@ -378,5 +429,32 @@
   </section>
   <section id="slide-10">
   </section>
+
+  <script>
+openCity("ese");
+
+function openCity(cityName, header) {
+    var i;
+    var x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        $('.city').removeClass('active');
+
+    }
+    $('#' + cityName).addClass("active");
+
+     if(header == "pure-power"){
+       $('#' + header).css('background-color', '#D67F00');
+       $('#ese-pure').css('background-color', '#995402');
+     } else{
+       $('#' + header).css('background-color', '#D67F00');
+       $('#pure-power').css('background-color', '#995402');
+
+     }
+
+}
+</script>
+
+
   </body>
 </html>
