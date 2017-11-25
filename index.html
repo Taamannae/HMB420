@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
+    <script src="./js/parallax.min.js"></script>
+    <script src="./js/jquery.stellar.min.js"></script>
 
   </head>
   <body>
@@ -23,8 +25,12 @@
       <h1>I've got 99 problems and alcohol just added a million more</h1>
     </div>
     </section>
-    <section id="slide-2">
-      <!--<img src="./images/childmouse.svg" class="active child-mouse kid-mice" id="mice1">-->
+    <section id="slide-2" class="parallax-window" data-parallax="scroll" data-image-src="./images/site.jpg">
+      <body>
+<div id="m1"></div>
+<div id="m2"></div>
+<div id="m3"></div>
+</body>
       <h4> Wanna see what happens when you start drinking now?</h4>
 
     </section>
@@ -32,6 +38,7 @@
     <section id="slide-3">
 
       <h1>Let the drinking games begin!</h1>
+
 
       <h5> Click on the drinks to take the teen mouse to a fun week of binge drinking!</h5>
 
@@ -426,6 +433,12 @@ year prior to the Youth Smoking Survery 2012-2013</p>
   <section id="slide-7">
   </section>
   <section id="slide-8">
+    <p>As alcohol is the highest used psychoactive drug in Canada, compared to tobacco, marijuana and other illegal drugs, it is a critical issue based on the listed statistics (Alcohol Consumption in Canada 2015 Report).
+Primarily centered on the 2017 paper "Persistent Decreases in Adult Subventricular and Hippocampal Neurogenesis Following Adolescent Intermittent Ethanol Exposure", which stresses adolescent consequences of binge-drinking in the adult brain, our aim is to translate the key conclusion in this paper to inform Ontario adolescents.
+Our goal is to provide an updated and scientifically-based educational resource on alcohol consumption risk, targeted towards the adolescent population for the Toronto District School Board. This paper was published recently in August 2017 and is the first scientific paper to demonstrate the effects of alcohol binge drinking on adolescents.
+This informative and interactive site, not only displays the neural effects of alcohol on the brain after repeated exposure but also proposes a workshop for educators to discuss the presented information, as well as other educational activities.
+Alcohol binge drinking in adolescents has been linked to emotional and behavioural problems. Therefore, we encourage that parents should be involved in the workshop with the students because underage drinking is illegal and parents can be the greatest source for helping their child.
+</p>
   </section>
   <section id="slide-9">
   </section>
@@ -455,6 +468,33 @@ function openCity(cityName, header) {
      }
 
 }
+</script>
+
+
+<script>
+
+// Create cross browser requestAnimationFrame method:
+window.requestAnimationFrame = window.requestAnimationFrame
+ || window.mozRequestAnimationFrame
+ || window.webkitRequestAnimationFrame
+ || window.msRequestAnimationFrame
+ || function(f){setTimeout(f, 1000/60)}
+
+var bubble1 = document.getElementById('m1')
+var bubble2 = document.getElementById('m2')
+var bubble3 = document.getElementById('m3')
+
+function parallaxbubbles(){
+ var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+ bubble1.style.top = -scrolltop * .1 + 'px' // move bubble1 at 20% of scroll rate
+ bubble2.style.top = -scrolltop * .5 + 'px' // move bubble2 at 50% of scroll rate
+ bubble3.style.top = -scrolltop * .3 + 'px' // move bubble2 at 50% of scroll rate
+}
+
+window.addEventListener('scroll', function(){ // on page scroll
+ requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+}, false)
+
 </script>
 
 
