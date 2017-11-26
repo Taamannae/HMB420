@@ -3,8 +3,7 @@ window.JSMaps.maps.canada = {
 		"mapWidth": 1282.943,
 		"mapHeight": 1243.581,
 		"displayAbbreviations": true,
-		"defaultText": "<h1>Canada</h1><br /><p><ul><li>Alcohol is the substance with the highest prevalence of use by Canadian students in grades 7 to 12. </li><li>On average, students tried their first alcoholic beverage at 13.5 years of age </li><li>Just under one quarter of students (24%, approximately 500,000 students) reported drinking excessively (i.e., five or more drinks on one occasion) in the past 12 months.</li><li>When students were asked how difficult they thought it would be to get alcohol if they wanted some, 67% (approximately 1.4 million students) responded that they thought it would be 'fairly easy' or 'very easy'.</li><li>Motor vehicle crashes, liver cirrhosis, suicides, oesophageal cancer, and arrhythmias were the leading causes of alcohol-related deaths. — MADD Canada </li><li>By grades 10 to 12, almost 60% of teenagers reported having had a drink in the previous year while about 46% reported having undertaken binge drinking in 2012-2013. </li><li>Previous year was linked to emotional and behaviour problems, particularly in those drinking more, particularly in those who undertook binge drinking the most </li><li>Alcohol is the most commonly abused Substance in Canada</li></ul></p>"
-	},
+		"defaultText": "<h1>STATS & NUMBERS</h1><br /><p> Click on ontario to see some ontario based statistics on adolescent drinking and click anywhere else to learn some statistics about adolescent drinking in Canada. </p>"},
 	"paths": [
 		{
 			"enable": true,
