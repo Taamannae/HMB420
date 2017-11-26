@@ -1,6 +1,3 @@
-$(window).on('load', function(){
-
-
 $(document).ready(function(){
 
   $('.parallax-window').parallax({imageSrc: './images/neuron.png'});
