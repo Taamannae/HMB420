@@ -62,8 +62,8 @@
 }
 
 #slide-7{
-  background-color: #F27A5F;
-  padding: 0;
+  background-color: #02131d;
+  padding: 40px;
 }
 #slide-8{
   background-color: #0a8899;
@@ -99,6 +99,21 @@
     line-height: 20px;
 }
 
+
+#slide-7 h1{
+  color: #feb41c;
+
+}
+
+
+.container2{
+  margin-left: 50px;
+ width: 950px;
+}
+
+.jsmaps{
+  width: 800px !important
+}
 #purtitle{
   margin: 0 auto;
   display: block;
@@ -115,16 +130,16 @@
 }
 
 #slide-9 .row{
-  margin: 40px 0 40px 0;
+  margin: 20px 0 20px 0;
   padding-bottom: 30px;
   display: flex;
-  border-bottom: 2px dashed #fff;
 
 }
 
 #slide-9 .col-xs-3{
   border-right: 2px dashed #fff;
   display: table-cell;
+  padding: 20px;
 
 }
 
