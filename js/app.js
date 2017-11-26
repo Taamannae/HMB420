@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   $('.parallax-window').parallax({imageSrc: './images/neuron.png'});
+  $('.parallax-window2').parallax({imageSrc: './images/back.png'});
 
 
   var counter = 0;
