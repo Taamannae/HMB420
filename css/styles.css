@@ -101,7 +101,7 @@
 
 #slide-8 h1{
 
-    font-size: 16px;
+    font-size: 13px;
     color: #fff;
     text-align: left;
     font-weight: 100;
@@ -126,6 +126,7 @@
 #purtitle{
   margin: 0 auto;
   display: block;
+  width: 200px;
 }
 
 #slide-9{
@@ -163,7 +164,7 @@
 
 #slide-9 h1{
 
-    font-size: 16px;
+    font-size: 13px;
     color: #fff;
     text-align: left;
     font-weight: 100;
@@ -185,11 +186,19 @@
 }
 
 .hello{
-  width: 200px;
+  width: 300px;
   display: table;
   float: left;
-  margin-right: -200px;
-  padding-left: 40px;
+  margin-right: -300px;
+  padding-left: 140px;
+}
+
+a{
+  color: #000 !important;
+}
+
+a:hover{
+  color: #686868;
 }
 
 
