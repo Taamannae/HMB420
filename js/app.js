@@ -2,191 +2,184 @@
 
 $(document).ready(function(){
 
-  // Memory Game
-// © 2014 Nate Wiley
-// License -- MIT
-// best in full screen, works on phones/tablets (min height for game is 500px..) enjoy ;)
-// Follow me on Codepen
-
-(function(){
-
-	var Memory = {
-
-		init: function(cards){
-			this.$game = $(".game");
-			this.$modal = $(".modal");
-			this.$overlay = $(".modal-overlay");
-			this.$restartButton = $("button.restart");
-			this.cardsArray = $.merge(cards, cards);
-			this.shuffleCards(this.cardsArray);
-			this.setup();
-			this.binding();
-		},
-
-		shuffleCards: function(cardsArray){
-			this.$cards = $(this.shuffle(this.cardsArray));
-		},
-
-		setup: function(){
-			this.html = this.buildHTML();
-			this.$game.html(this.html);
-			this.$memoryCards = $(".card");
-			this.paused = false;
-     	this.guess = null;
-		},
-
-		binding: function(){
-			this.$memoryCards.on("click", this.cardClicked);
-			this.$restartButton.on("click", $.proxy(this.reset, this));
-		},
-		// kinda messy but hey
-		cardClicked: function(){
-			var _ = Memory;
-			var $card = $(this);
-			if(!_.paused && !$card.find(".inside").hasClass("matched") && !$card.find(".inside").hasClass("picked")){
-				$card.find(".inside").addClass("picked");
-				if(!_.guess){
-					_.guess = $(this).attr("data-id");
-				} else if(_.guess == $(this).attr("data-id") && !$(this).hasClass("picked")){
-					$(".picked").addClass("matched");
-					_.guess = null;
-				} else {
-					_.guess = null;
-					_.paused = true;
-					setTimeout(function(){
-						$(".picked").removeClass("picked");
-						Memory.paused = false;
-					}, 600);
-				}
-				if($(".matched").length == $(".card").length){
-					_.win();
-				}
-			}
-		},
-
-		win: function(){
-			this.paused = true;
-			setTimeout(function(){
-				Memory.showModal();
-				Memory.$game.fadeOut();
-			}, 1000);
-		},
-
-		showModal: function(){
-			this.$overlay.show();
-			this.$modal.fadeIn("slow");
-		},
-
-		hideModal: function(){
-			this.$overlay.hide();
-			this.$modal.hide();
-		},
-
-		reset: function(){
-			this.hideModal();
-			this.shuffleCards(this.cardsArray);
-			this.setup();
-			this.$game.show("slow");
-		},
-
-		// Fisher--Yates Algorithm -- https://bost.ocks.org/mike/shuffle/
-		shuffle: function(array){
-			var counter = array.length, temp, index;
-	   	// While there are elements in the array
-	   	while (counter > 0) {
-        	// Pick a random index
-        	index = Math.floor(Math.random() * counter);
-        	// Decrease counter by 1
-        	counter--;
-        	// And swap the last element with it
-        	temp = array[counter];
-        	array[counter] = array[index];
-        	array[index] = temp;
-	    	}
-	    	return array;
-		},
-
-		buildHTML: function(){
-			var frag = '';
-			this.$cards.each(function(k, v){
-				frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
-				<div class="front"><img src="'+ v.img +'"\
-				alt="'+ v.name +'" /></div>\
-				<div class="back"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/codepen-logo.png"\
-				alt="Codepen" /></div></div>\
-				</div>';
-			});
-			return frag;
-		}
-	};
-
-	var cards = [
-		{
-			name: "php",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/php-logo_1.png",
-			id: 1,
-		},
-		{
-			name: "css3",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/css3-logo.png",
-			id: 2
-		},
-		{
-			name: "html5",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/html5-logo.png",
-			id: 3
-		},
-		{
-			name: "jquery",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/jquery-logo.png",
-			id: 4
-		},
-		{
-			name: "javascript",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/js-logo.png",
-			id: 5
-		},
-		{
-			name: "node",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/nodejs-logo.png",
-			id: 6
-		},
-		{
-			name: "photoshop",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/photoshop-logo.png",
-			id: 7
-		},
-		{
-			name: "python",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
-			id: 8
-		},
-		{
-			name: "rails",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/rails-logo.png",
-			id: 9
-		},
-		{
-			name: "sass",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sass-logo.png",
-			id: 10
-		},
-		{
-			name: "sublime",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/sublime-logo.png",
-			id: 11
-		},
-		{
-			name: "wordpress",
-			img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/wordpress-logo.png",
-			id: 12
-		},
-	];
-
-	Memory.init(cards);
-
-
+  // constant variables
+var constants = new (function() {
+    var rows = 3;
+    var columns = 6;
+    var numMatches = (rows * columns) / 2;
+    this.getRows = function() { return rows; };
+    this.getColumns = function() { return columns; };
+    this.getNumMatches = function() { return numMatches; };
 })();
+
+// Global Variables
+var	currentSessionOpen = false;
+var	previousCard = null;
+var numPairs = 0;
+
+// this function creates deck of cards that returns an object of cards
+// to the caller
+function createDeck() {
+	var rows = constants.getRows();
+	var cols = constants.getColumns();
+	var key = createRandom();
+	var deck = {};
+	deck.rows = [];
+
+	// create each row
+	for(var i = 0; i < rows; i++) {
+		var row = {};
+		row.cards = [];
+
+		// creat each card in the row
+		for (var j = 0; j < cols; j++) {
+			var card = {};
+			card.isFaceUp = false;
+			card.item = key.pop();
+			row.cards.push(card);
+		}
+		deck.rows.push(row);
+	}
+	return deck;
+}
+
+// used to remove something form an array by index
+function removeByIndex(arr, index) {
+    arr.splice(index, 1);
+}
+
+function insertByIndex(arr, index, item) {
+	arr.splice(index, 0, item);
+}
+
+// creates a random array of items that contain matches
+// for example: [1, 5, 6, 5, 1, 6]
+function createRandom() {
+	var matches = constants.getNumMatches();
+	var pool = [];
+	var answers = [];
+	var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'
+					, 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'
+					, 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
+
+	var hiragana = ['あ', 'い', 'う', 'え', 'お', 'か', 'が', 'き'
+					, 'ぎ', 'く', 'ぐ', 'け', 'げ', 'こ', 'ご', 'さ'
+					, 'ざ', 'し', 'じ', 'す', 'ず', 'せ', 'ぜ', 'そ'
+					, 'ぞ', 'た', 'だ', 'ち', 'ぢ', 'つ', 'づ', 'て'
+					, 'で', 'と', 'ど', 'な', 'に', 'ぬ', 'ね', 'の'
+					, 'は', 'ば', 'ぱ', 'ひ', 'び', 'ぴ', 'ふ', 'ぶ'
+					, 'ぷ', 'へ', 'べ', 'ぺ', 'ほ', 'ぼ', 'ぽ', 'ま'
+					, 'み', 'む', 'め', 'も', 'や', 'ゆ', 'よ', 'ら'
+					, 'り', 'る', 'れ', 'ろ', 'わ', 'を', 'ん'];
+	// set what kind of item to display
+	var items = letters;
+
+	// create the arrays for random numbers and item holder
+	for (var i = 0; i < matches * 2; i++) {
+		pool.push(i); // random numbers
+	}
+
+	// generate an array with the random items
+	for (var n = 0; n < matches; n++) {
+		// grab random letter from array and remove that letter from the
+		// original array
+		var randLetter = Math.floor((Math.random() * items.length));
+		var letter = items[randLetter];
+		removeByIndex(items, randLetter);
+		// generate two random placements for each item
+		var randPool = Math.floor((Math.random() * pool.length));
+
+		// remove the placeholder from answers and insert the letter into
+		// random slot
+		insertByIndex(answers, pool[randPool], letter);
+
+		// remove random number from pool
+		removeByIndex(pool, randPool);
+
+		// redo this process for the second placement
+		randPool = Math.floor((Math.random() * pool.length));
+		insertByIndex(answers, pool[randPool], letter);
+
+		// remove rand number from pool
+		removeByIndex(pool, randPool);
+	}
+	return answers;
+}
+
+var app = angular.module('cards', ['ngAnimate']);
+
+app.controller("CardController", function($scope, $timeout) {
+	$scope.deck = createDeck();
+	$scope.isGuarding = true;
+	$scope.inGame = false;
+
+	$scope.check = function(card) {
+		if (currentSessionOpen && previousCard != card && previousCard.item == card.item && !card.isFaceUp) {
+			card.isFaceUp = true;
+			previousCard = null;
+			currentSessionOpen = false;
+			numPairs++;
+		} else if(currentSessionOpen && previousCard != card && previousCard.item != card.item && !card.isFaceUp) {
+			$scope.isGuarding = true;
+			card.isFaceUp = true;
+			currentSessionOpen = false;
+			$timeout(function() {
+				previousCard.isFaceUp = card.isFaceUp = false;
+				previousCard = null;
+				$scope.isGuarding = $scope.timeLimit ? false : true;
+			}, 1000);
+		} else {
+			card.isFaceUp = true;
+			currentSessionOpen = true;
+			previousCard = card;
+		}
+
+		if (numPairs == constants.getNumMatches()) {
+			$scope.stopTimer();
+		}
+	} //end of check()
+
+	// for the timer
+	$scope.timeLimit = 0;
+	$scope.isCritical = false;
+
+	var timer = null;
+
+	// start the timer as soon as the player presses start
+	$scope.start = function(){
+		// I need to fix this redundancy. I initially did not create this
+		// game with a start button.
+		$scope.deck = createDeck();
+		// set the time of 1 minutes and remove the cards guard
+		$scope.timeLimit = 0;
+		$scope.isGuarding = false;
+		$scope.inGame = true;
+
+		($scope.startTimer =function() {
+			$scope.timeLimit += 1000;
+			$scope.isCritical = $scope.timeLimit <= 10000 ? true : false;
+
+			timer = $timeout($scope.startTimer, 1000);
+			if ($scope.timeLimit === 0) {
+				$scope.stopTimer();
+				$scope.isGuarding = true;
+			}
+		})();
+	}
+	// function to stop the timer
+	$scope.stopTimer = function() {
+
+	  $timeout.cancel(timer);
+	  $scope.inGame = false;
+	  previousCard = null;
+	  currentSessionOpen = false;
+	  numPairs = 0;
+    document.getElementById('hello').styles.display = 'block'
+	}
+
+});
+
+
 
   $('.parallax-window').parallax({imageSrc: './images/neuron.png'});
   $('.parallax-window2').parallax({imageSrc: './images/back.png'});
