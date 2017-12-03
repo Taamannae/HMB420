@@ -154,11 +154,22 @@
 
 #slide-10{
   background-color: #AC66CC;
-  padding: 0;
+  padding: 40px;
+  color: #000;
 }
 #slide-11{
   background-color: #AC66CC;
   padding: 4px;
+}
+
+#slide-10 h2{
+  margin: 30px auto;
+  font-size: 16px;
+  text-transform:none;
+}
+
+#slide-10 li{
+  margin: 20px auto;
 }
 
 #slide-12{
